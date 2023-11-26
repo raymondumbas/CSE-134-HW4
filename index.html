@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src = "scripts.js" type = "module"></script>
     <title>Home</title>
     <style>
         main h1{
@@ -13,10 +14,33 @@
         }
 
         img{
-            width:60dvw;
+            width:30dvw;
             height:auto;
         }
-        
+        form{
+            margin-top: 1rem;
+
+        }
+        fieldset{
+            background-color: var(--background_color,gray);
+            height: 36dvh;
+            width: 30dvw;
+            padding-left: 2rem;
+            padding-top: 0.5rem;
+        }
+        textarea{
+            height: 15dvh;
+            width: 28dvw;
+        }
+        #submit{
+            color: var(--text_color, black);
+            background-color: var(--background_color, gray);
+            border-width: 0.1rem;
+            border-color: var(--text_color,black);
+        }
+        input,textarea{
+            color: rgb(49, 50, 70);
+        }
     </style>
 </head>
 <body>
@@ -28,6 +52,8 @@
             <a href="./experience.html">Experience</a> 
             <a href="./about.html">About</a> 
         </nav>
+        <input class = "themeToggle" type = "checkbox">
+
     </header>
 
     <div class = "content">
@@ -42,13 +68,28 @@
                 <source media="(min-width: 992px)" srcset="media/images/me_large.jpg">
                 <img src="media/images/me_medium.jpg" alt="Photo of me at UCSD" >
             </picture>
+            <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                    <legend> Contact Me! </legend>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="comment">Comment:</label><br>
+                    <textarea id="comment" name="comment" placeholder = "Leave a message here."></textarea><br>
+                    <input id = "submit" type="submit" value="Submit">
+
+                    <input type="hidden" id="possible_bot" name="possible_bot" value="true">
+                    
+                    <output class="error-message"></output>
+                    <output class="info-message"></output>
+                </fieldset>
+            </form>
         </main>
         <footer>
             <span>Author: Raymond Umbas</span>
         </footer>
     
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

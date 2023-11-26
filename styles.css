@@ -3,13 +3,31 @@
     src: url("media/DM_Sans.woff2");
 }
 
-*{
-    font-family: 'DM Sans', sans-serif;
+:root{
+    /*Color Variables (fallback = same value)*/
+    --text_color: rgb(240, 244, 248);
+    --secondary_color: rgb(29, 34, 51);
+    --background_color: rgb(10, 15, 34);
+
+    /*Light Mode Colors*/
+    --light_text: rgb(49, 50, 70);
+    --light_secondary: rgb(119, 132, 245);
+    --light_background: rgb(231, 229, 255);
+
+    /*Dark Mode Colors*/
+    --dark_text:rgb(240, 244, 248);
+    --dark_secondary:rgb(29, 34, 51);
+    --dark_background:rgb(10, 15, 34);
 }
 
-body{
-    background-color: var(--background_color,rgb(10, 15, 34));
-    color: var(--text_color,rgb(240, 244, 248));
+*{
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text_color, black);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1{
@@ -18,15 +36,11 @@ h1{
     margin-top:0;
     padding: 1rem;
 }
-:root{
-    /*Color Variables (fallback = same value)*/
-    --text_color: rgb(240, 244, 248);
-    --secondary_color: rgb(29, 34, 51);
-    --background_color: rgb(10, 15, 34);
-}
+
 
 body{
     display:flex;
+     background-color: var(--background_color, gray);
 }
 
 hr{
@@ -34,16 +48,17 @@ hr{
 }
 /* Style for the vertical navbar */
 header {
-    background-color: var(--secondary_color,gray); /* Change the background color as needed */
+    background-color: var(--secondary_color,lightblue);
     width: 20dvw; /* Set the width of the navbar */
     height: 95dvh;
-    
+    display:flex;
+    flex-direction: column;
 }
 
 /* Style for the links inside the navbar */
 header a {
+    background-color: var(--secondary_color,lightblue);
     display: block;
-    color: white;
     text-decoration: none;
     padding: 2em;
     transition: background-color 1s, font-size 1s;
@@ -56,6 +71,14 @@ header a:hover {
     font-size: 1.2em;
     
 }
+
+header input{
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    display: none;
+}
+
 
 .content{
     display:flex;
