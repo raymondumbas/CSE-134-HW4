@@ -61,8 +61,6 @@ header a {
     display: block;
     text-decoration: none;
     padding: 2em;
-    transition: background-color 1s, font-size 1s;
-    
 }
 
 /* Change the link color on hover */
@@ -79,7 +77,20 @@ header input{
     display: none;
 }
 
-
+.themeToggle{
+    color: var(--text_color, black);
+    background-color: var(--background_color, gray);
+    border-width: 0.1rem;
+    border-color: var(--text_color,black);
+    margin-top: auto;
+    margin-bottom: 1rem;
+    width: 75%;
+    align-self: center;
+    border-radius: 25px;
+}
+button:hover{
+    cursor: pointer;
+}
 .content{
     display:flex;
     flex-direction: column;
